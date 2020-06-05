@@ -4,40 +4,108 @@
     require_once 'dompdf/autoload.inc.php';
 
     $dompdf = new DOMPDF();
-
+    $data = '05/06/2020';
+    $laboratorio = 'x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x';
+    $num_exame = '1234-AL-ON15';
     $style='
         <html>
             <head>
-                <style type="text/css">
-                    .header {
-                        text-align:center;
-                    }
-                    .footer {
-                        position:absolute;
-                        bottom:0;
-                        width:100%;
-                        text-align:center;
-                    }
-                </style>
+                <link rel="stylesheet" href="styles.css">
+                <meta charset="UTF-8">
             </head>
+
         <body>';
-    $header = '<h1 class="header">Gerar PDF</h1>';
+    $header =
+        '   <div class="header">
+                <div class="header-info">
+                    <p class="header-data">'.$data.'</p>
+                    <p class="header-title">Resenha online</p>
+                </div>
+            </div>
+            <div class="page-header">
+                <h1 class="title">REQUISIÇÃO E RESULTADO DE DIAGNÓSTICO DE ANEMIA INFECCIOSA EQUINA</h1>
+                <div class="info-lab">
+                    <div class="laboratorio">
+                        <div>
+                            <p>Laboratório</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Endereço</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Cidade/UF:</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                    </div>
+                    <div class="portaria">
+                        <div>
+                            <p>Portaria de credenciamento</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Telefone</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Endereço Eletrônico (e-mail):</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                    </div>
+                    <div class="numero-exame">
+                        <p>Número do exame</p>
+                        <h1>'.$num_exame.'</h1>
+                    </div>
+                </div>
+                <div class="info-proprietario">
+                    <div class="nomes-vet-prop">
+                        <div>
+                            <p>Proprietário do Animal:</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Médico Veterinário Requisitante:</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                    </div>
+                    <div class="enderecos-vet-prop">
+                        <div>
+                            <p>Endereço Completo: </p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Endereço Completo: </p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                    </div>
+                    <div class="telefones-vet-prop">
+                        <div>
+                            <p>Telefone: </p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                        <div>
+                            <p>Telefone:</p>
+                            <p>'.$laboratorio.'</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        '
+        ;
     $body = '
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur at justo vel viverra. Sed quis tristique turpis, a ullamcorper ex. Curabitur semper, libero quis sodales pellentesque, libero libero hendrerit felis, ac vestibulum orci velit nec orci. Nunc hendrerit lobortis tempor. Nullam a risus ullamcorper, venenatis leo et, cursus urna. Etiam pellentesque risus vitae leo porttitor, id ullamcorper nisl aliquam. Vivamus sed auctor risus, nec ullamcorper sem. Proin et nisi massa. Quisque semper congue mauris quis lacinia. Sed tempor lobortis augue, vitae tempor tortor ornare vel. Aenean eu magna ipsum. Sed in tortor nisl. Suspendisse potenti.
-        </p>
-        <p>
-            Donec porta mauris sit amet erat vulputate rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi eget turpis libero. Proin imperdiet sagittis massa, at facilisis nulla hendrerit vel. Duis fringilla, eros ac vehicula ornare, velit nibh sagittis purus, in iaculis quam nunc non mi. Fusce sapien leo, laoreet a risus id, vehicula sagittis ligula. Nunc vitae ullamcorper augue, nec iaculis sem. Ut sit amet feugiat velit.
-        </p>            
+                 
     ';     
     $footer = '
-        <div class="footer">
-            Footer
-        </div>
-        </body>
+        
     ';
+
+
+
         
     $html =$style.$header.$body.$footer;
+    //$html = ''
     $html = utf8_decode($html);
     $dompdf->load_html($html);
 

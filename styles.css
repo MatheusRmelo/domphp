@@ -1,0 +1,79 @@
+body{
+    margin:0;
+    padding: 0;
+}
+.header {
+    width: 100%;
+    margin-top: -2%;
+}
+.header-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 10px;
+}
+.header-data {
+    margin: 0%;
+}
+.header-title{
+    margin-left: 60%;
+}
+.page-header {
+    margin-top: -4%;
+}
+.title{
+    border: 1px solid black;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin:0;
+}
+.info-lab{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -17.5%;
+}
+.laboratorio div{
+    border: 1px solid black;
+    width: 40%;
+}
+.portaria div{
+    border: 1px solid black;
+    margin-left: 40%;
+    width: 40%;
+}
+.numero-exame{
+    border: 1px solid black;
+    height: 8%;
+    width: 19.7%;
+    margin-left: 80%;
+}
+.numero-exame h1{
+    font-size: 15px;
+    text-align: center;
+}
+.page-header p{
+    font-size: 10px;
+    margin: 0 1%;
+}
+.info-proprietario{
+    display: flex;
+    flex-direction: row;
+}
+.nomes-vet-prop div{
+    border: 1px solid black;
+    width: 40%;
+    height: 4%;
+}
+.enderecos-vet-prop div{
+    border: 1px solid black;
+    width: 40%;
+    height: 4%;
+    margin-left: 40%;
+}
+.telefones-vet-prop div{
+    border: 1px solid black;
+    width: 19.7%;
+    height: 4%;
+    margin-left: 80%;
+}
